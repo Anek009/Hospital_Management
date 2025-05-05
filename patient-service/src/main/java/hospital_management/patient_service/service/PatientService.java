@@ -1,5 +1,9 @@
 package hospital_management.patient_service.service;
 
+
+import hospital_management.patient_service.client.AppointmentClient;
+import hospital_management.patient_service.dto.AppointmentDTO;
+
 import hospital_management.patient_service.entity.Patient;
 import hospital_management.patient_service.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +17,13 @@ public class PatientService {
 
     private final PatientRepository patientRepository;
 
+    private final AppointmentClient appointmentClient;
+
     @Autowired
-    public PatientService(PatientRepository patientRepository) {
+    public PatientService(PatientRepository patientRepository, AppointmentClient appointmentClient) {
         this.patientRepository = patientRepository;
+        this.appointmentClient = appointmentClient;
+
     }
 
     public Patient registerPatient(Patient patient) {
@@ -29,4 +37,13 @@ public class PatientService {
     public List<Patient> getAllPatients() {
         return patientRepository.findAll();
     }
+
+
+
+
+
+    public AppointmentDTO getAppointment(Long appointmentId) {
+        return appointmentClient.getAppointmentById(appointmentId);
+    }
+
 }
