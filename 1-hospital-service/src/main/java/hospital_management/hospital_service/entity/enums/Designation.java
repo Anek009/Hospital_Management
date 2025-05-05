@@ -1,0 +1,13 @@
+package hospital_management.hospital_service.entity.enums;
+
+public enum Designation {
+    SENIOR_CONSULTANT,
+    PROFESSOR,
+    ASSOCIATE_PROFESSOR,
+    JUNIOR_DOCTOR,
+    RESIDENT,
+    CHIEF_PHYSICIAN,
+    MEDICAL_OFFICER,
+    SURGEON,
+    GENERAL_PRACTITIONER
+}
