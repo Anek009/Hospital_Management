@@ -1,0 +1,6 @@
+package hospital_management.patient_service.security;
+
+public  class JwtSecret {
+
+    protected static final String JWT_SECRET_KEY="bbc1f43a6fc9f9512ac6e23b09b0aa700efdedd4e24e2524ce32f634ce9772c6f95b6249b5164dcfd94d990b55094bc8ff6a4b4120148643cd1dfe17532065a1e7cda3e76d859bc50390aca39e6b12a0f0e6510b1217bd86ca0e0f067d705938ef6789d8f0b684b4eb458393b31a8f4c132334bb66c16c978025a69ea7198148";
+}

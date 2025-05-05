@@ -4,6 +4,7 @@ package hospital_management.auth_service.controller;
 import hospital_management.auth_service.dto.request.LogInRequestDTO;
 import hospital_management.auth_service.dto.request.RegisterRequestDTO;
 import hospital_management.auth_service.dto.response.AuthenticationResponseDTO;
+import hospital_management.auth_service.dto.response.LogInResponseDTO;
 import hospital_management.auth_service.response.ResponseHandler;
 import hospital_management.auth_service.service.AuthenticationService;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +34,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> authenticate(@RequestBody LogInRequestDTO request) {
-        return ResponseHandler.generateResponse(new Date(), "Login successful"
-                , HttpStatus.OK, authenticationService.authenticate(request));
+    public ResponseEntity<LogInResponseDTO> authenticate(@RequestBody LogInRequestDTO request) {
+        return ResponseEntity.ok().body( authenticationService.authenticate(request));
     }
 }

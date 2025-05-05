@@ -1,7 +1,6 @@
 package hospital_management.hospital_service.service.admin.impl;
 
 import hospital_management.hospital_service.dto.AuthenticationResponseDTO;
-import hospital_management.hospital_service.dto.LogInResponseDTO;
 import hospital_management.hospital_service.dto.admin.request.AdminRequestDTO;
 import hospital_management.hospital_service.dto.admin.request.RegisterRequestDTO;
 import hospital_management.hospital_service.exception.FeignCustomException;
