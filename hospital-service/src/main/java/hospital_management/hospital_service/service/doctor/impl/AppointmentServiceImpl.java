@@ -4,6 +4,7 @@ import hospital_management.hospital_service.dto.doctor.request.AppointmentReques
 import hospital_management.hospital_service.dto.doctor.response.*;
 import hospital_management.hospital_service.entity.Appointment;
 import hospital_management.hospital_service.entity.Doctor;
+import hospital_management.hospital_service.enums.AppointmentType;
 import hospital_management.hospital_service.exception.CustomException;
 import hospital_management.hospital_service.feign.PatientFeignClient;
 import hospital_management.hospital_service.repository.doctor.AppointmentRepository;
@@ -139,7 +140,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         int totalPatient = totalPatientDoctorHad(userId);
         int totalAppointment = totalAppointmentDoctorHad(userId);
         int todayAppointment = appointmentRepository.findByDoctorUserIdAndAppointmentDate(userId, LocalDate.now()).size();
-        int totalOnlineAppointments = appointmentRepository.countByDoctorUserIdAndAppointmentType(userId, AppointmentType.TELEMEDICINE);
+        int totalOnlineAppointments = appointmentRepository.countByDoctorUserIdAndAppointmentType(userId, AppointmentType.ONLINE);
         return DashboardResponseDTO
                 .builder()
                 .totalPatient(totalPatient)

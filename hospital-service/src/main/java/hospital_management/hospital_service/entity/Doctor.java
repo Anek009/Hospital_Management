@@ -1,10 +1,9 @@
 package hospital_management.hospital_service.entity;
 
 
-import hospital_management.hospital_service.dto.admin.response.RoomResponseDTO;
-import hospital_management.hospital_service.entity.enums.ApprovalStatus;
-import hospital_management.hospital_service.entity.enums.Degree;
-import hospital_management.hospital_service.entity.enums.Designation;
+import hospital_management.hospital_service.enums.ApprovalStatus;
+import hospital_management.hospital_service.enums.Degree;
+import hospital_management.hospital_service.enums.Designation;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,7 +1,7 @@
 package hospital_management.hospital_service.repository.doctor;
 
 import hospital_management.hospital_service.entity.Appointment;
-import hospital_management.hospital_service.entity.enums.AppointmentType;
+import hospital_management.hospital_service.enums.AppointmentType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

@@ -2,6 +2,7 @@ package hospital_management.hospital_service.entity;
 
 
 
+import hospital_management.hospital_service.enums.AppointmentType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,5 +28,5 @@ public class Appointment {
     private LocalDate appointmentDate;
 
     @Enumerated(EnumType.STRING)
-    private hospital_management.hospital_service.entity.enums.AppointmentType appointmentType;
+    private AppointmentType appointmentType;
 }

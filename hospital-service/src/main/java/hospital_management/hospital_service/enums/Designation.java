@@ -1,4 +1,4 @@
-package hospital_management.hospital_service.entity.enums;
+package hospital_management.hospital_service.enums;
 
 public enum Designation {
     SENIOR_CONSULTANT,

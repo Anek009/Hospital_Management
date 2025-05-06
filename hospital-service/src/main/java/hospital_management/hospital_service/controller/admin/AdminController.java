@@ -1,8 +1,7 @@
 package hospital_management.hospital_service.controller.admin;
 
-import hospital_management.hospital_service.dto.admin.response.PendingDoctorRegistrationResponseDTO;
 import hospital_management.hospital_service.entity.Doctor;
-import hospital_management.hospital_service.entity.enums.ApprovalStatus;
+import hospital_management.hospital_service.enums.ApprovalStatus;
 import hospital_management.hospital_service.exception.CustomException;
 import hospital_management.hospital_service.repository.doctor.DoctorRepository;
 import lombok.RequiredArgsConstructor;

@@ -15,7 +15,7 @@ import java.util.Date;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/doctor/appointment")
+@RequestMapping("/api/hms/doctor/appointment")
 public class AppointmentController {
     private final AuthenticationService authenticationService;
     private final AppointmentService appointmentService;
