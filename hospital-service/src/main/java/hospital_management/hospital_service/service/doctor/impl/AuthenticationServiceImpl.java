@@ -7,9 +7,9 @@ import hospital_management.hospital_service.dto.doctor.request.DoctorRegisterReq
 import hospital_management.hospital_service.dto.AuthenticationResponseDTO;
 import hospital_management.hospital_service.dto.doctor.response.RegisterResponseDTO;
 import hospital_management.hospital_service.entity.Doctor;
-import hospital_management.hospital_service.entity.enums.ApprovalStatus;
-import hospital_management.hospital_service.entity.enums.Degree;
-import hospital_management.hospital_service.entity.enums.Designation;
+import hospital_management.hospital_service.enums.ApprovalStatus;
+import hospital_management.hospital_service.enums.Degree;
+import hospital_management.hospital_service.enums.Designation;
 import hospital_management.hospital_service.exception.AuthenticationException;
 import hospital_management.hospital_service.exception.CustomException;
 import hospital_management.hospital_service.exception.FeignCustomException;
@@ -121,6 +121,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return Doctor.builder()
                 .deptId(room.getDeptId())
                 .userId(userId)
+                .email(request.getEmail())
                 .roomId(room.getRoomId())
                 .name(request.getName())
                 .image(request.getImage())

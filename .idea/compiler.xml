@@ -10,14 +10,9 @@
         <module name="api-gateway" />
         <module name="hospital-service" />
         <module name="auth-service" />
+        <module name="patient-service" />
         <module name="Eureka-server" />
         <module name="billing-service" />
-      </profile>
-      <profile name="Annotation profile for patient-service" enabled="true">
-        <sourceOutputDir name="../3-patient-service/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../3-patient-service/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="patient-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,8 +1,8 @@
 package hospital_management.hospital_service.util;
 
-import hospital_management.hospital_service.entity.enums.AppointmentType;
-import hospital_management.hospital_service.entity.enums.Degree;
-import hospital_management.hospital_service.entity.enums.Designation;
+import hospital_management.hospital_service.enums.AppointmentType;
+import hospital_management.hospital_service.enums.Degree;
+import hospital_management.hospital_service.enums.Designation;
 import hospital_management.hospital_service.exception.CustomException;
 import org.springframework.http.HttpStatus;
 

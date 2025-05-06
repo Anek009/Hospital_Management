@@ -6,7 +6,7 @@ import hospital_management.hospital_service.dto.AuthenticationResponseDTO;
 import hospital_management.hospital_service.dto.doctor.request.DoctorRegisterRequestDTO;
 import hospital_management.hospital_service.dto.doctor.response.RegisterResponseDTO;
 import hospital_management.hospital_service.entity.Doctor;
-import hospital_management.hospital_service.entity.enums.ApprovalStatus;
+import hospital_management.hospital_service.enums.ApprovalStatus;
 import hospital_management.hospital_service.exception.AuthenticationException;
 import hospital_management.hospital_service.feign.SecurityServiceClient;
 import hospital_management.hospital_service.repository.doctor.DoctorRepository;
@@ -15,7 +15,6 @@ import hospital_management.hospital_service.service.admin.AdminAuthenticationSer
 import hospital_management.hospital_service.service.doctor.AuthenticationService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,7 +56,7 @@ public class AuthenticationController {
     public ResponseEntity<Object> loginDoctor(@RequestBody LogInRequestDTO request){
 
         Doctor doctor = doctorRepository.findByEmail(request.getEmail())
-                .orElseThrow(()-> new AuthenticationException(HttpStatus.BAD_REQUEST,"try to register"));
+                .orElseThrow(()-> new AuthenticationException(HttpStatus.BAD_REQUEST,"doctor not found with given email"));
         if(doctor.getApprovalStatus().equals(ApprovalStatus.APPROVED)){
             return ResponseHandler.generateResponse(new Date(), "Login successful"
                 , HttpStatus.OK, securityServiceClient.authenticate(request));
