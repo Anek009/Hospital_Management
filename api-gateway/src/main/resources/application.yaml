@@ -12,10 +12,11 @@ spring:
               - Path=/api/auth/**
               - Method=POST,OPTIONS,GET,DELETE,UPDATE
           - id: hospital-service-route
+
             uri: lb://HOSPITAL-SERVICE
             predicates:
               - Path=/api/hms/**
-              - Method=GET,POST,OPTIONS
+              - Method=GET,POST,OPTIONS,PUT
           - id: appointment-service-route
             uri: lb://APPOINTMENT-SERVICE
             predicates:
