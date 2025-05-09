@@ -2,6 +2,7 @@ package hospital_management.hospital_service.feign;
 
 
 import hospital_management.hospital_service.dto.LogInRequestDTO;
+import hospital_management.hospital_service.dto.LogInResponseDTO;
 import hospital_management.hospital_service.dto.admin.request.RegisterRequestDTO;
 import hospital_management.hospital_service.dto.AuthenticationResponseDTO;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -18,8 +19,8 @@ public interface SecurityServiceClient {
 
 
     @CircuitBreaker(name = "CircuitBreakerService" ,fallbackMethod = "authError")
-    @PostMapping("api/auth/login")
-    public ResponseEntity<?> authenticate(@RequestBody LogInRequestDTO request);
+    @PostMapping("/api/auth/login")
+    public LogInResponseDTO authenticate(@RequestBody LogInRequestDTO request);
 
     default public String authError(Throwable throwable){
         return "unexpected Authentication Error..!";
