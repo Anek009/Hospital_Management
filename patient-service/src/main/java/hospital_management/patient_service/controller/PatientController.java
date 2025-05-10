@@ -15,7 +15,7 @@ import java.util.Date;
 @RequestMapping("/api/patient/profile")
 public class PatientController {
     private final PatientService patientService;
-
+//    /api/patient/profile/get/all
     @GetMapping("/get/all")
     public ResponseEntity<?> getAll() {
         return ResponseHandler.generateResponse(new Date(), "Patient List",

@@ -40,7 +40,7 @@ public class RegisterRequestDTO {
     private LocalDate dateOfBirth;
 
     @NotNull(message = "Blood group is required")
-    private String bloodGroup;git
+    private String bloodGroup;
 
     private Boolean interestedInBloodDonate;
 }
