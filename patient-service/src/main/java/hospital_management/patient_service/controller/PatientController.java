@@ -21,7 +21,7 @@ public class PatientController {
         return ResponseHandler.generateResponse(new Date(), "Patient List",
                 HttpStatus.OK, patientService.getAll());
     }
-
+//    /api/patient/profile/getByUserId/{userId}
     @GetMapping("/getByUserId/{userId}")
     public ResponseEntity<?> getByUserId(@PathVariable Long userId) {
         return ResponseHandler.generateResponse(new Date(), "Patient Information",

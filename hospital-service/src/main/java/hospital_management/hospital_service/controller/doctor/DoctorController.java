@@ -45,7 +45,7 @@ public class DoctorController {
         List<AllDoctorsDTO> response = doctorService.getAllDoctorsByDeptId(deptId);
         return ResponseHandler.generateResponse(new Date(), "Fetch All Data Successfully", HttpStatus.OK, response);
     }
-
+//  /api/hms/doctor/{doctorId}
     @GetMapping("/{doctorId}")
     public ResponseEntity<?> getDoctorByUserId(@PathVariable Long doctorId) {
         DoctorInfoDTO response = doctorService.getDoctorByUserId(doctorId);
@@ -58,7 +58,7 @@ public class DoctorController {
         doctorService.updateAvailability(doctorId, available);
         return ResponseHandler.generateResponse(new Date(), "Updated available status", HttpStatus.OK);
     }
-
+//    /api/hms/doctor/search
     @GetMapping("/search")
     public ResponseEntity<?> searchDoctors(
             @RequestParam(required = false) String name,
