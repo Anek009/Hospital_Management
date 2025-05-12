@@ -30,7 +30,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public List<AllDoctorsDTO> getAllDoctors() {
-        log.info("Fetching all doctors");
+        log.info("Fetching all Approved doctors");
         return doctorRepository.findAllByApprovalStatus(ApprovalStatus.APPROVED).stream().map((Doctor doctor) -> mapToDTO(doctor)).toList();
     }
 
@@ -106,6 +106,11 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Optional<Doctor> findByEmail(String email) {
         return doctorRepository.findByEmail(email);
+    }
+
+    @Override
+    public List<Doctor> getAllDoctorsList() {
+        return doctorRepository.findAll();//.stream().map((Doctor doctor) -> mapToDTO(doctor)).toList();
     }
 
     @Override
