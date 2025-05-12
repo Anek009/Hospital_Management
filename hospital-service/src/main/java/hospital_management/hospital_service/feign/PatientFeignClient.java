@@ -18,7 +18,7 @@ public interface PatientFeignClient {
 
 
     @CircuitBreaker(name = "CircuitBreakerService")
-    @GetMapping("/api/v2/patient/proxy/getByUserIdList")
+    @GetMapping("/api/patient/proxy/getByUserIdList")
     public List<PatientProxyDTO> getByUserId(@RequestParam("patients") List<Long> patients);
 
 

@@ -1,5 +1,7 @@
 package hospital_management.hospital_service.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +24,7 @@ public class Department {
     @Column(nullable = false)
     private Integer capacity;
 
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true , fetch = FetchType.LAZY)
+    @JsonBackReference
     private List<Room> rooms = new ArrayList<>();
 }

@@ -24,14 +24,16 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/hms/register/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/hms/register/admin").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/hms/register/doctor").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/hms/login/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/hms/admin/department/getAllDept").permitAll()
                         .requestMatchers("/api/hms/admin/department/**").hasRole(AppConstant.ROLE_ADMIN)
                         .requestMatchers("/api/hms/admin/rooms/**").hasRole(AppConstant.ROLE_ADMIN)
-                        .requestMatchers("/api/hms/admin/dashboard/**").hasRole(AppConstant.ROLE_ADMIN)
+                        .requestMatchers("/api/hms/admin/dashboard").hasRole(AppConstant.ROLE_ADMIN)
                         .requestMatchers("/api/hms/admin/proxy/**").permitAll()
                         .requestMatchers("/api/hms/doctor/**").permitAll()
+                        .requestMatchers("/api/hms/doctor/list").hasRole(AppConstant.ROLE_ADMIN)
                         .requestMatchers(AppConstant.DOCTOR_GET_ALL).permitAll()
                         .requestMatchers(AppConstant.DOCTOR_DEPARTMENT).permitAll()
                         .requestMatchers(AppConstant.DOCTOR_BY_ID).permitAll()
@@ -48,9 +50,7 @@ public class SecurityConfiguration {
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-        ;
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
 }

@@ -27,4 +27,8 @@ public interface DoctorService {
     public long countDoctors();
 
     Optional<Doctor> findByEmail(String email);
+
+    public List<Doctor> getAllDoctorsList();
+
+
 }

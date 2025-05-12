@@ -17,7 +17,7 @@ import java.util.Date;
 public class DashBoardController {
     private final DashBoardService dashBoardService;
 
-    @GetMapping("/get")
+    @GetMapping
     public ResponseEntity<?> getDashBoardInfo() {
         return ResponseHandler.generateResponse(new Date(), "Dashboard info",
                 HttpStatus.OK, dashBoardService.getDashBoardInfo());

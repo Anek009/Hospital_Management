@@ -28,6 +28,12 @@ public class DoctorController {
         return ResponseHandler.generateResponse(new Date(), "Fetch All Data Successfully", HttpStatus.OK, response);
     }
 
+    @GetMapping("/list")
+    public ResponseEntity<?> getAllDoctorsList() {
+        var response = doctorService.getAllDoctorsList();
+        return ResponseHandler.generateResponse(new Date(), "Fetch All Data Successfully", HttpStatus.OK, response);
+    }
+
     @PostMapping("/status/{email}")
     public ResponseEntity<?> getDoctorStatus(@PathVariable String email  ) {
         Doctor doctor = doctorService.findByEmail(email).orElseThrow(()->new CustomException(new Date(), "registration not started", HttpStatus.NO_CONTENT));
