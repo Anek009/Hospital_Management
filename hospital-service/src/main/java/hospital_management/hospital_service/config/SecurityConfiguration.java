@@ -24,7 +24,7 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/hms/register/admin").hasRole(AppConstant.ROLE_ADMIN)
+                        .requestMatchers(HttpMethod.POST, "/api/hms/register/admin").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/hms/register/doctor").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/hms/login/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/hms/admin/department/getAllDept").permitAll()
