@@ -27,7 +27,7 @@ public class DoctorRegisterRequestDTO {
     @Email(message = "Invalid email")
     private String email;
 
-    @NotEmpty(message = "image is required")
+//    @NotEmpty(message = "image is required")
     private String image;
 
     @NotEmpty(message = "Password is required")

@@ -27,4 +27,7 @@ public class AppointmentRequestDTO {
 
     @NotEmpty(message = "Appointment type is required")
     private String appointmentType;
+
+    @NotEmpty(message = "Symptoms are required")
+    private String symptoms;
 }
