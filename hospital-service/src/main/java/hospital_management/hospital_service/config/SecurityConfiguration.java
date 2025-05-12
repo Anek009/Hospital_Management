@@ -33,6 +33,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/hms/admin/dashboard").hasRole(AppConstant.ROLE_ADMIN)
                         .requestMatchers("/api/hms/admin/proxy/**").permitAll()
                         .requestMatchers("/api/hms/doctor/**").permitAll()
+                        .requestMatchers("/api/hms/doctor/list").hasRole(AppConstant.ROLE_ADMIN)
                         .requestMatchers(AppConstant.DOCTOR_GET_ALL).permitAll()
                         .requestMatchers(AppConstant.DOCTOR_DEPARTMENT).permitAll()
                         .requestMatchers(AppConstant.DOCTOR_BY_ID).permitAll()

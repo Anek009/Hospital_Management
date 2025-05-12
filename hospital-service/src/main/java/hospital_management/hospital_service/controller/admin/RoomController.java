@@ -19,7 +19,7 @@ public class RoomController {
     public RoomController(RoomService roomService) {
         this.roomService = roomService;
     }
-
+//    /api/hms/admin/rooms/getAll
     @GetMapping("/getAll")
     public ResponseEntity<?> getAllRooms() {
         List<RoomResponseDTO> response = roomService.getAllRooms();

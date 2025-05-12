@@ -33,7 +33,7 @@ public class RegisterRequestDTO {
     private String address;
 
     @NotNull(message = "Mobile number is required")
-    @Pattern(regexp = "^880\\d{10}$", message = "Mobile number must start with '880' and be followed by 10 digits")
+    @Pattern(regexp = "^91\\d{10}$", message = "Mobile number must start with '91' and be followed by 10 digits")
     private String mobileNo;
 
     @NotNull(message = "Date of birth is required")
